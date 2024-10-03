@@ -1,12 +1,12 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Jerry Chang
+- **Dot Number**: chang.2286
+- **Due Date**: 9/13 Friday 4:10pm
 
 ## Assignment Overview
 
-<!-- TODO: read the assignment overview then delete this comment -->
+
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +29,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,7 +50,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
 
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
@@ -67,7 +64,6 @@ project. Specifically, students should be able to:
 
 ## Assignment Rubric: 10 Points
 
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -98,23 +94,25 @@ do good work.
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+Overall, my interests involve around gaming, anime, internet culture, and generic software
+engineering. In my CS journey, I want to be extremely proficient in applicative coding and
+make projects that I personally like. Although I am driven by extrinsic factors in order to
+better my chances of landing internships, I personally wish I could learn CS without the
+constant pressure and fear of external factors.
+
+As of right now, I currently enjoy playing League of Legends with my friends back in
+California as a fun pasttime. I also play a decent amount of mobile games and somehow
+still watch anime since middle school. In general, I think my goals of any project I do are
+to first and foremost apply what I know and eventually research into what I like, and then
+it comes with the perk of a tangible project and experiences.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -124,7 +122,6 @@ you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
 
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -192,70 +189,107 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Subway Tracker
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    The subway tracker tracks the trains that enter and leave a certain subway station,
+    including what line the train is traveling on and the time.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - addTrainsAndTimes - add trains and their times
+    - boolean inStation(train): checks if a train is in station
+    - int numberOfTrains(): returns number of trains
+    - String trainLine(train): returns the line the train is traveling on
+    - nextArrival(): returns when the next arrival
+    - trainDeparture(train) returns when this train leaves
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - nextArrival(trainline) returns when the next arrival is at this particular line
+    - removeLine(line) removes a line
+    - addLines: adds train lines
+    - removeTrains: removes trains
+    - addTrains: adds trains
+
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+     Yes, since most likely, it will use maps and stacks as data structures in order
+     to properly store information. In order to track when and how many trains are at a
+     particular time, we need data to be mutmable.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      -We would need internal classes like Map.Pair in order to handle logic and information
+      pertaining to info like trains and times.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+       Not sure
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      -Yes, for example, I can implement nextArrival of a particular train line via
+      the nextArrival method and line methods
 
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: Seasonal Anime Dashboard
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    This dashboard models the tracking of the current season's airing anime.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    addAnime(): adds the anime and necessary information like title, season, year, genre
+    displaySeason(): displays season of this anime
+    display year: displays year of this anime
+    getTitle: if it exists, gets the title of the anime
+    iSGenre(genre): checks if the anime is this genre
+
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    isSeasonal: returns if this anime is in season(year included)
+    removeAnimeP: removes anime
+    getGenre(anime) grabs genre of this anime
+
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      It should be mutable since anime have to be added and removed.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      Most likely it would rely on internal classes in order to store and output information
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      Most likely not.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      -Yes, for example, isSeasonal checks if this anime is in season of this year, and
+      it can be made via display season and display year
 
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: Fridge
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    The fridgerator contains information about the items in it, if its connected to power, if its
+    open, and if the items are in the freezer or fridge portion.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    addItem(item): adds an item into the fridge
+    removeItem: removes an item at random from the fridge
+    inFridge(item): checks if an item is in fridge
+    inFreezer(item): checks if item is in fridge
+    numOfItem(item): reports the number of an item in the fridge
+
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    itemType() reports the type of the item
+    findItem() finds the item
+    storageTime() returns time of storage
+    inFreezer() checks if its in freezer
+
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      Yes, since items are added and removed.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      Yes, since in order to store information more efficiently, map.pair would
+      most likely be needed.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      No
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      Maybe, since some of the functionaltiy of the secondary methods are separate
+      from the kernel, like freezer. Others can though, like ItemType which is made via additem
+
 
 ## Post-Assignment
 
@@ -264,7 +298,6 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -282,16 +315,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## YYYY.MM.DD
+## 2024.09.11
 
 ### Added
 
-- Designed a <!-- insert name of component 1 here --> component
-- Designed a <!-- insert name of component 2 here --> component
-- Designed a <!-- insert name of component 3 here --> component
+- Designed a subway tracker component
+- Designed a seasonal anime component
+- Designed a fridge component
 ```
 
-Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
+Here `2024.09.11` would be the date of your submission, such as 2024.04.21.
 
 You may notice that things are nicely linked in the root CHANGELOG. If you'd
 like to accomplish that, you will need to make GitHub releases after each pull
@@ -303,7 +336,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
 
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
@@ -313,11 +345,8 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
 
 ### Peer Review
-
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
@@ -344,7 +373,6 @@ If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
 
-<!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [example-components]: https://therenegadecoder.com/code/the-never-ending-list-of-small-programming-project-ideas/
 [markdown-to-pdf-guide]: https://therenegadecoder.com/blog/how-to-convert-markdown-to-a-pdf-3-quick-solutions/

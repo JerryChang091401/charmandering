@@ -6,7 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## [Unreleased]
+## [2024.09.11]
+
+### Added
+
+- Designed a subway tracker component
+- Designed a seasonal anime component
+- Designed a fridge component
 
 ## [2024.08.07]
 
