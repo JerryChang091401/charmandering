@@ -8,6 +8,9 @@ the following form: YYYY.0M.0D.
 
 ## [2024.10.03]
 
+
+## [2024.10.03]
+
 ### Added
 
 - Designed a MVP for Fridge component

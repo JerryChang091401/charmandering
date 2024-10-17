@@ -1,20 +1,33 @@
 import components.map.Map;
 import components.map.Map1L;
 
-public class Fridge {
+public class Fridge implements FridgeKernel, FridgeSecondary {
     //key question: when i create Fridge fridge = new Fridge()
-    private boolean locationToggle;
+    /**
+     * Set up for fridge conditions/compartments.
+     */
+    private boolean isFridge;
+    /**
+     * Set up for fridge conditions/compartments.
+     */
     private Map<String, Integer> fridgeItems;
+    /**
+     * Set up for fridge conditions/compartments.
+     */
     private Map<String, Integer> freezerItems;
 
+    /**
+     * Constructor.
+     */
     public Fridge() {
-        this.locationToggle = true;
+        this.isFridge = true;
         this.fridgeItems = new Map1L<>();
         this.freezerItems = new Map1L<>();
     }
 
-    public void addItem(String item, boolean locationToggle) {
-        if (locationToggle) {
+    @Override
+    public void addItem(String item, boolean isFridge) {
+        if (isFridge) {
             if (this.fridgeItems.hasKey(item)) {
                 this.fridgeItems.replaceValue(item,
                         this.fridgeItems.value(item) + 1);
@@ -31,8 +44,9 @@ public class Fridge {
         }
     }
 
-    public void removeItem(String item, boolean isOpen) {
-        if (isOpen) {
+    @Override
+    public void removeItem(String item, boolean isFridge) {
+        if (isFridge) {
             if (this.isInFridge(item)) {
                 this.fridgeItems.remove(item);
             }
@@ -43,18 +57,20 @@ public class Fridge {
         }
     }
 
+    @Override
     public boolean isInFridge(String item) {
         return this.fridgeItems.hasKey(item);
     }
 
+    @Override
     public boolean isInFreezer(String item) {
         return this.freezerItems.hasKey(item);
     }
 
-    //do all
-    public int getNumOfItem(String item, boolean locationToggle) {
+    @Override
+    public int getNumOfItems(String item, boolean isFridge) {
         int count = 0;
-        if (locationToggle) {
+        if (isFridge) {
             if (this.fridgeItems.hasKey(item)) {
                 count = this.fridgeItems.value(item);
             }
@@ -64,6 +80,28 @@ public class Fridge {
             }
         }
         return count;
+    }
+
+    @Override
+    public int totalNumOfItems() {
+        return this.fridgeItems.size() + this.freezerItems.size();
+    }
+
+    @Override
+    public Fridge newInstance() {
+        return new Fridge();
+    }
+
+    @Override
+    public void clear() {
+        this.fridgeItems.clear();
+        this.freezerItems.clear();
+    }
+
+    @Override
+    public void transferFrom(Fridge fridge) {
+        this.fridgeItems.transferFrom(fridge.fridgeItems);
+        this.freezerItems.transferFrom(fridge.freezerItems);
     }
 
     public static void main(String[] args) {
