@@ -2,56 +2,74 @@ import components.map.Map;
 import components.map.Map1L;
 
 public class Fridge {
-    private boolean isOpen;
-    private static Map<String, Integer> fridgeItems;
+    //key question: when i create Fridge fridge = new Fridge()
+    private boolean locationToggle;
+    private Map<String, Integer> fridgeItems;
     private Map<String, Integer> freezerItems;
 
     public Fridge() {
-        this.isOpen = false;
+        this.locationToggle = true;
         this.fridgeItems = new Map1L<>();
         this.freezerItems = new Map1L<>();
     }
 
-    public void addOneItem(String item, boolean isOpen,
-            Map<String, Integer> location) {
-        if (!isOpen) {
-            if (location.hasKey(item)) {
-                location.replaceValue(item, location.value(item) + 1);
+    public void addItem(String item, boolean locationToggle) {
+        if (locationToggle) {
+            if (this.fridgeItems.hasKey(item)) {
+                this.fridgeItems.replaceValue(item,
+                        this.fridgeItems.value(item) + 1);
             } else {
-                location.add(item, 1);
+                this.fridgeItems.add(item, 1);
+            }
+        } else {
+            if (this.freezerItems.hasKey(item)) {
+                this.freezerItems.replaceValue(item,
+                        this.freezerItems.value(item) + 1);
+            } else {
+                this.freezerItems.add(item, 1);
             }
         }
     }
 
-    public void removeOneItem(String item, boolean isOpen,
-            Map<String, Integer> location) {
-        if (!isOpen) {
-            location.remove(item);
+    public void removeItem(String item, boolean isOpen) {
+        if (isOpen) {
+            if (this.isInFridge(item)) {
+                this.fridgeItems.remove(item);
+            }
+        } else {
+            if (this.isInFreezer(item)) {
+                this.freezerItems.remove(item);
+            }
         }
     }
 
-    public boolean inFridge(String item) {
+    public boolean isInFridge(String item) {
         return this.fridgeItems.hasKey(item);
     }
 
-    public boolean inFreezer(String item) {
+    public boolean isInFreezer(String item) {
         return this.freezerItems.hasKey(item);
     }
 
-    public int numOfItem(String item) {
+    //do all
+    public int getNumOfItem(String item, boolean locationToggle) {
         int count = 0;
-        if (fridgeItems.hasKey(item)) {
-            count = fridgeItems.value(item);
-        } else if (this.freezerItems.hasKey(item)) {
-            count = this.freezerItems.value(item);
+        if (locationToggle) {
+            if (this.fridgeItems.hasKey(item)) {
+                count = this.fridgeItems.value(item);
+            }
+        } else {
+            if (this.freezerItems.hasKey(item)) {
+                count = this.freezerItems.value(item);
+            }
         }
         return count;
     }
 
     public static void main(String[] args) {
         Fridge fridge = new Fridge();
-        fridge.addOneItem("steak", false, null);
-        fridge.removeOneItem("steak", false, fridgeItems);
+        fridge.addItem("steak", false);
+        fridge.removeItem("steak", false);
     }
 
 }
