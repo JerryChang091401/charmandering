@@ -1,7 +1,7 @@
 /**
  * Enhanced functionality of a fridge component.
  */
-public interface FridgeSecondary {
+public interface FridgeSecondaryInterface {
 
     /**
      * Gets the number of items in either the fridge or freezer.
