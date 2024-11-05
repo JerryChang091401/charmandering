@@ -6,7 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## [2024.10.03]
+## [2024.11.5]
+### Fixed
+
+- Replaced original Secondary with SecondaryInterface to show interface status
+
+### Added
+
+- Designed and implemented the true FridgeSecondary methods
+
+
+
+## [2024.10.17]
+### Fixed
+
+- Overrided methods following implementation of kernel and secondary interfaces.
+- Modified functionality in terms of fridge vs. freezer navigation.
+
+### Added
+
+- Designed FridgeKernel and Fridge Secondary interfaces.
+- Implemented Standard methods.
 
 
 ## [2024.10.03]
