@@ -1,7 +1,7 @@
 # Portfolio Part 2: Component Proof-of-Concept
 - **Name**: Jerry Chang
 - **Dot Number**: chang.2286
-- **Due Date**: 9/13 Friday 4:10pmcomment -->
+- **Due Date**: 9/13 Friday 4:10pm
 
 ## Assignment Overview
 
